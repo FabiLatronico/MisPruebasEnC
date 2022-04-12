@@ -38,6 +38,7 @@ printf("Cantidad de la altcoin: %f \n",cantidad);
 	printf("-------------------------------------------------------------------------------------------------------------------- \n");
 		printf("\n\n");
 
+//Agrego un cambio
 	
 system("pause");
 return 0;
