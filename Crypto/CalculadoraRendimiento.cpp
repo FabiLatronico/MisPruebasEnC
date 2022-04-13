@@ -44,7 +44,6 @@ void RentabilidadConAltcoin()
 	scanf("%f",&precioVenta);
 	
 	printf("\n\n\n\n");
-
 	float CantidadAltcoin = usdt / precioCompra;
 	float balance=CantidadAltcoin * precioVenta;
 	
