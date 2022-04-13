@@ -56,7 +56,7 @@ void RentabilidadConAltcoin()
 
 	printf("Balance %.2f USDT\n",balance);
 
-	
+	printf("SOLO AGREGUE UN CARTEL NUEVO \n");
 	
 	
 }
