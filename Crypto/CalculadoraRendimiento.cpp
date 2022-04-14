@@ -47,16 +47,14 @@ void RentabilidadConAltcoin()
 	float CantidadAltcoin = usdt / precioCompra;
 	float balance=CantidadAltcoin * precioVenta;
 	
-	printf("Tenencia %.2f %s | %.2f USDT \n",CantidadAltcoin,altcoin,usdt);
+	printf("Tenencia %.2f %s | %.2f USDT | %.2f ARS \n",CantidadAltcoin,altcoin,usdt,usdt*190);
 	
 	float porcentaje = (balance /usdt *100 ) -100; 
 		
 	printf("%s  %.2f USDT | %.2f %%\n",precioCompra<precioVenta ? "Ganancia" : "Perdida",balance-usdt,porcentaje);	
 
-	printf("Balance %.2f USDT\n",balance);
+	printf("Balance %.2f USDT | %.2f ARS\n",balance,balance*190);
 
-	printf("SOLO AGREGUE UN CARTEL NUEVO \n");
-	
 	
 }
 
