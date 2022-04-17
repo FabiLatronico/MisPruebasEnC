@@ -4,22 +4,35 @@
 #include<cstdio>
 #include<iostream>
 #include<conio.h>
-
+#include<cmath>
 
 using namespace std;
 
 //Prototipos de Funciones y Procedimientos
 void RentabilidadConAltcoin();
 void RentabilidadConUsdt();
+float interesCompuesto(float capitalInicial, float porcentaje ,int anios);
 void menu();
 void clrscr();
 void RentabilidadConTenenciaEnAltcoin();
+int tipoCambio = 190;
 //void Grafico();
 
 int main(){
-	
+	/*
+printf("Interes compuesto de 139.94 cakes  a un 62.53 %% en 1 anio:  %.2f \n", interesCompuesto(139.94,62.53,1));
+printf("Cakes ganados en 1 anio  %.2f \n", interesCompuesto(139.94,62.53,1)-139.94);
+printf("Cakes ganados en 1 mes  %.2f \n", (interesCompuesto(139.94,62.53,1)-139.94)/12);
+printf("Cakes ganados en 1 dia  %.2f \n", (interesCompuesto(139.94,62.53,1)-139.94)/365);	
+*/
 menu();
 return 0;
+}
+
+float interesCompuesto(float capitalInicial, float porcentaje ,int anios){
+	
+	return capitalInicial*pow((1+(porcentaje/100)),anios) ;
+	
 }
 
 void clrscr()
@@ -89,7 +102,7 @@ void RentabilidadConAltcoin()
 	float balance=CantidadAltcoin * precioVenta;
 	float porcentaje = (balance /usdt *100 ) -100;
 	
-	printf("Tenencia %.2f %s | %.2f USDT | %.2f ARS \n",CantidadAltcoin,altcoin,usdt,usdt*190);
+	printf("Tenencia %.2f %s | %.2f USDT | %.2f ARS \n",CantidadAltcoin,altcoin,usdt,usdt*tipoCambio);
 		
 	printf("%s  %.2f USDT | %.2f %%\n\n",precioCompra<precioVenta ? "Ganancia" : "Perdida",balance-usdt,porcentaje);	
 
@@ -134,11 +147,12 @@ void RentabilidadConTenenciaEnAltcoin()
 
 	
 	
-	printf("Tenencia %.2f %s | %.2f USDT | %.2f ARS \n",tenencia,altcoin,tenencia*precioActual,tenencia*precioActual*190);
-		
+	printf("Tenencia %.2f %s | %.2f USDT | %.2f ARS \n",tenencia,altcoin,tenencia*precioActual,tenencia*precioActual*tipoCambio);
+	printf("Inversion %.2f %s | %.2f USDT | %.2f ARS \n",tenencia-(deuda/precioActual),altcoin,(tenencia*precioActual)-deuda,((tenencia*precioActual)-deuda)*tipoCambio);
+	printf("Deuda %.2f %s | %.2f USDT | %.2f ARS \n",deuda/precioActual,altcoin,deuda,deuda*tipoCambio);	
 	printf("%s  %.2f USDT | %.2f %% \n",Condicion ? "Ganancia" : "Perdida",balance,porcentaje);
 	if(!Condicion) {
-		printf("Para estar en tablas \n",12.0);
+		printf("Para estar en tablas \n");
 		printf("Necesito que el precio suba a -> %.2f \n\n",Equilibrio);
 	}
 	
